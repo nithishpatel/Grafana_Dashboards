@@ -1,0 +1,474 @@
+{
+  "__inputs": [
+    {
+      "name": "DS_CSV_DATA SOURCE",
+      "label": "csv data source",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "yesoreyeram-infinity-datasource",
+      "pluginName": "Infinity"
+    }
+  ],
+  "__elements": {},
+  "__requires": [
+    {
+      "type": "panel",
+      "id": "bargauge",
+      "name": "Bar gauge",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "geomap",
+      "name": "Geomap",
+      "version": ""
+    },
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "11.3.0"
+    },
+    {
+      "type": "panel",
+      "id": "timeseries",
+      "name": "Time series",
+      "version": ""
+    },
+    {
+      "type": "datasource",
+      "id": "yesoreyeram-infinity-datasource",
+      "name": "Infinity",
+      "version": "2.11.1"
+    }
+  ],
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "${DS_CSV_DATA SOURCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "11.3.0",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "created_at",
+              "text": "",
+              "type": "timestamp"
+            },
+            {
+              "selector": "field1",
+              "text": "",
+              "type": "number"
+            },
+            {
+              "selector": "field2",
+              "text": "",
+              "type": "number"
+            }
+          ],
+          "computed_columns": [
+            {
+              "selector": "field1+field2",
+              "text": "field3",
+              "type": "string"
+            }
+          ],
+          "data": "created_at,entry_id,field1,field2\n2023-07-04 04:10:58 UTC,15147884,0.000000,2.000000\n2023-07-04 04:11:13 UTC,15147885,2.000000,0.000000\n2023-07-04 04:11:28 UTC,15147886,8.000000,1.000000\n2023-07-04 04:11:44 UTC,15147887,0.000000,1.000000\n2023-07-04 04:11:59 UTC,15147888,0.000000,0.000000\n2023-07-04 04:12:15 UTC,15147889,1.000000,0.000000\n2023-07-04 04:12:30 UTC,15147890,0.000000,5.000000\n2023-07-04 04:12:46 UTC,15147891,0.000000,2.000000\n2023-07-04 04:13:02 UTC,15147892,0.000000,0.000000\n2023-07-04 04:13:17 UTC,15147893,1.000000,0.000000\n2023-07-04 04:13:34 UTC,15147894,2.000000,2.000000\n2023-07-04 04:13:49 UTC,15147895,3.000000,2.000000\n2023-07-04 04:14:06 UTC,15147896,8.000000,2.000000\n2023-07-04 04:14:21 UTC,15147897,6.000000,2.000000\n2023-07-04 04:14:37 UTC,15147898,0.000000,2.000000\n2023-07-04 04:14:53 UTC,15147899,1.000000,3.000000\n2023-07-04 04:15:09 UTC,15147900,2.000000,1.000000\n2023-07-04 04:15:25 UTC,15147901,2.000000,2.000000\n2023-07-04 04:15:41 UTC,15147902,0.000000,3.000000\n2023-07-04 04:15:56 UTC,15147903,0.000000,0.000000\n2023-07-04 04:16:11 UTC,15147904,1.000000,2.000000\n2023-07-04 04:16:27 UTC,15147905,1.000000,0.000000\n2023-07-04 04:16:42 UTC,15147906,0.000000,0.000000\n2023-07-04 04:16:57 UTC,15147907,0.000000,0.000000\n2023-07-04 04:17:13 UTC,15147908,0.000000,2.000000\n2023-07-04 04:17:28 UTC,15147909,2.000000,0.000000\n2023-07-04 04:17:44 UTC,15147910,0.000000,0.000000\n2023-07-04 04:18:01 UTC,15147911,0.000000,5.000000\n2023-07-04 04:18:16 UTC,15147912,0.000000,0.000000\n2023-07-04 04:18:31 UTC,15147913,0.000000,0.000000\n2023-07-04 04:18:47 UTC,15147914,0.000000,0.000000\n2023-07-04 04:19:02 UTC,15147915,0.000000,0.000000\n2023-07-04 04:19:17 UTC,15147916,2.000000,0.000000\n2023-07-04 04:19:32 UTC,15147917,3.000000,2.000000\n2023-07-04 04:19:48 UTC,15147918,1.000000,0.000000\n2023-07-04 04:20:05 UTC,15147919,2.000000,0.000000\n2023-07-04 04:20:20 UTC,15147920,0.000000,1.000000\n2023-07-04 04:20:35 UTC,15147921,1.000000,0.000000\n2023-07-04 04:20:51 UTC,15147922,1.000000,0.000000\n2023-07-04 04:21:07 UTC,15147923,0.000000,2.000000\n2023-07-04 04:21:22 UTC,15147924,6.000000,0.000000\n2023-07-04 04:21:38 UTC,15147925,3.000000,2.000000\n2023-07-04 04:21:54 UTC,15147926,0.000000,0.000000\n2023-07-04 04:22:09 UTC,15147927,1.000000,2.000000\n2023-07-04 04:22:24 UTC,15147928,2.000000,0.000000\n2023-07-04 04:22:40 UTC,15147929,4.000000,0.000000\n2023-07-04 04:22:56 UTC,15147930,2.000000,0.000000\n2023-07-04 04:23:11 UTC,15147931,3.000000,1.000000\n2023-07-04 04:23:27 UTC,15147932,1.000000,2.000000\n2023-07-04 04:23:43 UTC,15147933,2.000000,2.000000\n2023-07-04 04:23:58 UTC,15147934,0.000000,0.000000\n2023-07-04 04:24:13 UTC,15147935,3.000000,1.000000\n2023-07-04 04:24:28 UTC,15147936,3.000000,2.000000\n2023-07-04 04:24:44 UTC,15147937,3.000000,1.000000\n2023-07-04 04:25:00 UTC,15147938,4.000000,3.000000\n2023-07-04 04:25:15 UTC,15147939,0.000000,0.000000\n2023-07-04 04:25:31 UTC,15147940,0.000000,4.000000\n2023-07-04 04:25:47 UTC,15147941,0.000000,1.000000\n2023-07-04 04:26:02 UTC,15147942,0.000000,2.000000\n2023-07-04 04:26:17 UTC,15147943,2.000000,0.000000\n2023-07-04 04:26:33 UTC,15147944,0.000000,0.000000\n2023-07-04 04:26:48 UTC,15147945,0.000000,0.000000\n2023-07-04 04:27:03 UTC,15147946,5.000000,2.000000\n2023-07-04 04:27:18 UTC,15147947,2.000000,2.000000\n2023-07-04 04:27:34 UTC,15147948,1.000000,0.000000\n2023-07-04 04:27:50 UTC,15147949,8.000000,1.000000\n2023-07-04 04:28:05 UTC,15147950,1.000000,0.000000\n2023-07-04 04:28:21 UTC,15147951,0.000000,0.000000\n2023-07-04 04:28:36 UTC,15147952,0.000000,0.000000\n2023-07-04 04:28:52 UTC,15147953,0.000000,2.000000\n2023-07-04 04:29:07 UTC,15147954,0.000000,0.000000\n2023-07-04 04:29:22 UTC,15147955,0.000000,0.000000\n2023-07-04 04:29:38 UTC,15147956,4.000000,4.000000\n2023-07-04 04:29:53 UTC,15147957,10.000000,5.000000\n2023-07-04 04:30:09 UTC,15147958,0.000000,1.000000\n2023-07-04 04:30:24 UTC,15147959,0.000000,0.000000\n2023-07-04 04:30:39 UTC,15147960,1.000000,3.000000\n2023-07-04 04:30:55 UTC,15147961,2.000000,0.000000\n2023-07-04 04:31:10 UTC,15147962,0.000000,0.000000\n2023-07-04 04:31:25 UTC,15147963,2.000000,2.000000\n2023-07-04 04:31:40 UTC,15147964,0.000000,0.000000\n2023-07-04 04:31:56 UTC,15147965,0.000000,1.000000\n2023-07-04 04:32:12 UTC,15147966,0.000000,1.000000\n2023-07-04 04:32:28 UTC,15147967,0.000000,3.000000\n2023-07-04 04:32:43 UTC,15147968,1.000000,0.000000\n2023-07-04 04:32:58 UTC,15147969,3.000000,0.000000\n2023-07-04 04:33:14 UTC,15147970,2.000000,0.000000\n2023-07-04 04:33:29 UTC,15147971,3.000000,0.000000\n2023-07-04 04:33:45 UTC,15147972,0.000000,0.000000\n2023-07-04 04:34:00 UTC,15147973,0.000000,0.000000\n2023-07-04 04:34:15 UTC,15147974,8.000000,1.000000\n2023-07-04 04:34:31 UTC,15147975,4.000000,0.000000\n2023-07-04 04:34:46 UTC,15147976,3.000000,0.000000\n2023-07-04 04:35:01 UTC,15147977,1.000000,1.000000\n2023-07-04 04:35:18 UTC,15147978,0.000000,0.000000\n2023-07-04 04:35:33 UTC,15147979,0.000000,1.000000\n2023-07-04 04:35:49 UTC,15147980,0.000000,1.000000\n2023-07-04 04:36:05 UTC,15147981,0.000000,2.000000\n2023-07-04 04:36:20 UTC,15147982,0.000000,0.000000\n2023-07-04 04:36:36 UTC,15147983,6.000000,1.000000\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "${DS_CSV_DATA SOURCE}"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "uql": "parse-csv",
+          "url": "https://github.com/grafana/grafana-infinity-datasource/blob/main/testdata/users.json",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "feed data from CSV",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "${DS_CSV_DATA SOURCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1000
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 7
+      },
+      "id": 1,
+      "options": {
+        "displayMode": "gradient",
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "maxVizHeight": 300,
+        "minVizHeight": 16,
+        "minVizWidth": 8,
+        "namePlacement": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": true
+        },
+        "showUnfilled": true,
+        "sizing": "auto",
+        "valueMode": "color"
+      },
+      "pluginVersion": "11.3.0",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "# of Visitors",
+              "text": "visitors",
+              "type": "number"
+            },
+            {
+              "selector": "Browser",
+              "text": "",
+              "type": "string"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "${DS_CSV_DATA SOURCE}"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "summarizeAlias": "Browser_visitors",
+          "summarizeBy": "Browser",
+          "summarizeExpression": "sum(visitors)",
+          "type": "csv",
+          "uql": "parse-csv",
+          "url": "http://localhost:8000/website-traffic.csv",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Browser Visitors from local http server",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "${DS_CSV_DATA SOURCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 14
+      },
+      "id": 3,
+      "options": {
+        "basemap": {
+          "config": {},
+          "name": "Layer 0",
+          "type": "default"
+        },
+        "controls": {
+          "mouseWheelZoom": true,
+          "showAttribution": true,
+          "showDebug": false,
+          "showMeasure": false,
+          "showScale": false,
+          "showZoom": true
+        },
+        "layers": [
+          {
+            "config": {
+              "showLegend": true,
+              "style": {
+                "color": {
+                  "fixed": "dark-green"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "field": "minimum_nights",
+                  "fixed": 5,
+                  "max": 20,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "location": {
+              "latitude": "latitude",
+              "longitude": "longitude",
+              "mode": "coords"
+            },
+            "name": "Layer 1",
+            "tooltip": true,
+            "type": "markers"
+          }
+        ],
+        "tooltip": {
+          "mode": "details"
+        },
+        "view": {
+          "allLayers": true,
+          "id": "coords",
+          "lat": 40.641153,
+          "lon": -73.997198,
+          "zoom": 8.98
+        }
+      },
+      "pluginVersion": "11.3.0",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "latitude",
+              "text": "",
+              "type": "number"
+            },
+            {
+              "selector": "longitude",
+              "text": "",
+              "type": "number"
+            },
+            {
+              "selector": "minimum_nights",
+              "text": "",
+              "type": "number"
+            },
+            {
+              "selector": "name",
+              "text": "",
+              "type": "string"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "${DS_CSV_DATA SOURCE}"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "csv",
+          "uql": "parse-csv",
+          "url": "http://localhost:8000/AB_NYC_2019.csv",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "NYC airbnb ",
+      "type": "geomap"
+    }
+  ],
+  "schemaVersion": 40,
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "2023-07-04T04:10:58.000Z",
+    "to": "2023-07-04T04:36:36.000Z"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "Visualizations from different data sources",
+  "uid": "be29pqqbrnr40e",
+  "version": 6,
+  "weekStart": ""
+}
