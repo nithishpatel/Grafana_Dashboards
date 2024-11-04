@@ -1,0 +1,1 @@
+In these projects, I have created dashboards from different data sources like Influxdb where live data is taken from a website, local http server, csv file and created visualizations such as line chart to show trend, bar chart to compare website traffic and so on.
